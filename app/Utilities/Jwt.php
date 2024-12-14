@@ -6,7 +6,7 @@ use Firebase\JWT\Key;
 use stdClass;
 
 class Jwt {
-    public static string $key = env('JWT_KEY');
+    public static string $key = 'Bytescape3d';
     public static string $algo = 'HS256';
 
     public static function sign(string | array | int $w): string {

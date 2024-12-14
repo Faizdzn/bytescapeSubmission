@@ -6,14 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class FloatBox extends Component
+class CourseCard extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(public string $kelasid = '1')
     {
-        //
+        $this->kelasid = $kelasid;
     }
 
     /**
@@ -21,8 +21,8 @@ class FloatBox extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.float-box', [
-            "ye" => 1
+        return view('components.course-card', [
+            'kelas' => $this->kelasid
         ]);
     }
 }

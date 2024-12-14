@@ -24,25 +24,9 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com1',
         ]);
         
-        Course::factory()->create([
-            'course_name' => 'Course1',
-            'course_desc' => 'this is a test course'
-        ]);
-
-        CourseEntry::factory()->create([
-            'user_id' => 1,
-            'course_id' => 1
-        ]);
-
-        Kelas::factory()->create([
-            'kelas_name' => 'Test Kelas',
-            'kelas_desc' => 'Ini test Kelas'
-        ]);
-
-        KelasEntry::factory()->create([
-            'user_id' => 1,
-            'kelas_id' => 1
-        ]);
-
+        // Course::factory()->create([
+        //     'course_name' => 'Course1',
+        //     'course_desc' => 'this is a test course'
+        // ]);
     }
 }

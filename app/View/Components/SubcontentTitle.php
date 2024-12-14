@@ -6,12 +6,12 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class FloatBox extends Component
+class SubcontentTitle extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(public string $text = 'Title', public string $variant = 'default')
     {
         //
     }
@@ -21,8 +21,6 @@ class FloatBox extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.float-box', [
-            "ye" => 1
-        ]);
+        return view('components.subcontent-title');
     }
 }

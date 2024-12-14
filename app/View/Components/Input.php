@@ -6,12 +6,16 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class FloatBox extends Component
+class Input extends Component
 {
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct(
+        public string $name,
+        // public string $ph,
+        public string $id
+    )
     {
         //
     }
@@ -21,8 +25,6 @@ class FloatBox extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.float-box', [
-            "ye" => 1
-        ]);
+        return view('components.input');
     }
 }

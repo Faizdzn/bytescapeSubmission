@@ -7,13 +7,19 @@ export default {
         './storage/framework/views/*.php',
         './resources/**/*.blade.php',
         './resources/**/*.js',
-        './resources/**/*.vue',
     ],
     theme: {
         extend: {
             fontFamily: {
                 sans: ['Figtree', ...defaultTheme.fontFamily.sans],
             },
+            colors: {
+                gold: '#F0CE5C',
+                green: '#2DE069',
+                dark_green: '#009532',
+                white_1: '#F9F9F9',
+                black_1: '#121216'
+            }
         },
     },
     plugins: [],

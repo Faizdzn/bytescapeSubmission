@@ -17,12 +17,7 @@ class CourseFactory extends Factory
     public function definition(): array
     {
         return [
-            'course_name' => 'Course Name',
-            'course_desc' => 'This is a course!',
-            'course_topic' => '',
-            'course_slot' => 1,
-            'course_author' => 1,
-            'course_time' => time() + 86400
+            //
         ];
     }
 }

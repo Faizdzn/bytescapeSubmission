@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class FloatBox extends Component
+class profileDropdown extends Component
 {
     /**
      * Create a new component instance.
@@ -21,8 +21,6 @@ class FloatBox extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.float-box', [
-            "ye" => 1
-        ]);
+        return view('components.profile-dropdown');
     }
 }

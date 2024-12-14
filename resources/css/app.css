@@ -1,3 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body {
+    font-family: 'Gabarito', sans-serif;
+    @apply text-black_1 bg-white_1
+}
+
+hr {
+    @apply border-4 border-black_1/5 border-dashed rounded-full w-full
+}
+
+.centered {
+    @apply md:max-w-[71%] mx-auto w-full
+}
+
+.open-nav {
+    @apply max-md:block transition-all max-md:max-h-[250px] max-md:overflow-clip max-md:mt-[30px]
+}
+
+.close-nav {
+    @apply max-md:hidden transition-all max-md:max-h-0 max-md:overflow-clip
+}
+
+.open-side {
+    @apply opacity-100 transition-all max-md:h-full max-md:max-h-[5000px] md:max-w-[250px] max-md:overflow-clip max-md:mt-[30px]
+}
+
+.close-side {
+    @apply opacity-0 transition-all max-md:max-h-0 md:max-w-0 max-md:overflow-clip max-md:mt-[30px]
+}
+
+.inp {
+    @apply z-[100] bg-black/5 text-black/50 text-sm px-[15px] py-[10px] rounded-xl focus:outline-none border-2 border-transparent focus:border-green
+}
+
+.label {
+    @apply transition-all ease-in peer-focus:text-green peer-focus:left-0 peer-focus:top-[-25px] peer-focus:text-sm absolute left-[18px] top-[21%] text-black_1/50 placeholder-inherit
+}
+
+.label-act {
+    @apply transition-all ease-in peer-focus:text-green left-0 top-[-25px] text-sm absolute text-black_1/50
+}
+
+.a {
+    @apply transition ease-in text-green hover:underline
+}
