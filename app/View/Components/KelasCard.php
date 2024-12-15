@@ -6,15 +6,13 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class Input extends Component
+class KelasCard extends Component
 {
     /**
      * Create a new component instance.
      */
     public function __construct(
-        public string $name,
-        public string $id,
-        public string $value = "",
+        public string $kid = '1'
     )
     {
         //
@@ -25,6 +23,6 @@ class Input extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.input');
+        return view('components.kelas-card');
     }
 }

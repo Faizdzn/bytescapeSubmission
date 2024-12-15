@@ -11,7 +11,7 @@ class Navbtn extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $text, public bool $active = false)
+    public function __construct(public string $url = '/')
     {
         //
     }

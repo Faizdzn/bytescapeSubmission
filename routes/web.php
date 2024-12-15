@@ -1,7 +1,10 @@
 <?php
 
 use App\Exceptions\MainException;
+use App\Http\Controllers\CourseController;
+use App\Http\Controllers\KelasController;
 use App\Http\Controllers\test;
+use App\Http\Controllers\test2;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
@@ -10,15 +13,29 @@ Route::get('/', function () {
 });
 
 Route::get('/login', function () {
-    return view('page.auth.login', [
-        'nav' => 'Login'
-    ]);
+    return view('page.auth.login');
 });
 
 Route::get('/register', function () {
-    return view('page.auth.register', [
-        'nav' => 'Register'
-    ]);
+    return view('page.auth.register');
+});
+
+Route::prefix('/my')->group(function () {
+    Route::get('/dashboard', function () {
+        return view('page.my.dashboard');
+    });
+});
+
+Route::prefix('/kelas')->group(function () {
+    Route::get('/', [KelasController::class, 'index']);
+
+    Route::get('/{id}', [KelasController::class, 'show']);
+});
+
+Route::prefix('/course')->group(function () {
+    Route::get('/', [CourseController::class, 'index']);
+
+    Route::get('/{id}', [CourseController::class, 'show']);
 });
 
 Route::get('/test/{id}', function ($id) {
@@ -33,9 +50,14 @@ Route::prefix('/test1')->group(function () {
     Route::get('/{arg1}/{arg2}', [test::class, 'show']);
 });
 
+Route::get('/test2/{id}', [test2::class, 'update']);
 
-Route::get('/test2', function() {
-    return response()->view('test');
+Route::get('/access/{key}', function($key) {
+    if($key != 'FAIZDZN_DEV3012') {
+        throw new MainException('Invalid Key!', 400);
+    }
+    
+    return response()->redirectTo('/')->withCookie('FAIZDZN_DEV3012', '1');
 });
 
 Route::fallback(function () {

@@ -5,15 +5,36 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
 use App\Models\Course;
+use Illuminate\Http\Request;
 
 class CourseController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $p = $request->query('page') ?? 1;
+        $s = $request->query('sort') ?? 'pop';
+        $sort_arr = [
+            'Terbaru' => 'new',
+            'Populer' => 'pop',
+            'Sudah Gabung' => 'join'
+        ];
+
+        if(!in_array($s, $sort_arr)) {
+            $s = 'pop';
+        }
+
+        if(!intval($p) || intval($p) < 1) {
+            $p = 1;
+        }
+
+        return view('page.course.index', [
+            'page' => $p,
+            'sort' => $s,
+            'sort_arr' => $sort_arr
+        ]);
     }
 
     /**
@@ -35,9 +56,9 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Course $course)
+    public function show(Request $request, Course $course)
     {
-        //
+        
     }
 
     /**

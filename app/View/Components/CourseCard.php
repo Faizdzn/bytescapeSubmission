@@ -11,9 +11,11 @@ class CourseCard extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct(public string $kelasid = '1')
+    public function __construct(
+        public string $cid = '1'
+    )
     {
-        $this->kelasid = $kelasid;
+
     }
 
     /**
@@ -21,8 +23,6 @@ class CourseCard extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.course-card', [
-            'kelas' => $this->kelasid
-        ]);
+        return view('components.course-card');
     }
 }

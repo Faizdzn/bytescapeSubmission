@@ -1,5 +1,5 @@
 @extends('layout.sidebar', [
-    'nav' => $nav
+    'nav' => 'Register'
 ])
 
 @section('content')

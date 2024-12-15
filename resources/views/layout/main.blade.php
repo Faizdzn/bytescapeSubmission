@@ -14,6 +14,7 @@
     {{-- <link href="/css/main.css" rel="stylesheet" /> --}}
     <script src="/js/main.js"></script>
     <script src="/js/service.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))

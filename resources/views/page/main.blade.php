@@ -14,7 +14,7 @@
 </div>
 <hr class="centered">
 <div class="centered flex flex-col gap-6">
-    <x-subcontent-title text="Course Terbaru Dari Komunitas Kami"></x-subcontent-title>
+    <x-subcontent-title text="Course Terbaru Dari Kelas Kami"></x-subcontent-title>
     <div class="flex max-md:flex-col flex-wrap justify-center gap-6 p-[15px]">
         <x-course-card></x-course-card>
         <x-course-card></x-course-card>
@@ -24,7 +24,7 @@
 <div class="w-full bg-green p-6">
     <div class="centered flex flex-col gap-6">
         <x-subcontent-title text="Apa Yang Mereka Katakan Tentang Kami?" variant="2"></x-subcontent-title>
-        <div class="flex max-md:flex-col gap-6 md:overflow-x-auto md:snap-x">
+        <div class="scroll-hide flex max-md:flex-col gap-6 md:overflow-x-auto md:snap-x">
             <x-testimoni-card name="Anthony" star="0">
                 Bangsat banget ini aplikasi
             </x-testimoni-card>

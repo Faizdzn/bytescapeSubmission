@@ -26,8 +26,20 @@
                     </div>
                 </div>
             </div>
-            <div id="sbContent" class="close-side fixed z-[9900] left-0 bg-white_1 p-3 w-[250px] max-md:border-b-2 md:border-r-2 border-black_1/15 md:h-screen max-md:w-screen">
-                
+            <div id="sbContent" class="close-side fixed z-[9900] left-0 bg-white_1 w-[250px] max-md:border-b-2 md:border-r-2 border-black_1/15 md:h-screen max-md:w-screen">
+                <div class="h-[90px] max-md:h-[125px]"></div>
+                <x-navbtn url="/my/dashboard">
+                    <i class="ti ti-layout-dashboard"></i>
+                    Dashboard
+                </x-navbtn>
+                <x-navbtn url="/course">
+                    <i class="ti ti-school"></i>
+                    Course
+                </x-navbtn>
+                <x-navbtn url="/kelas">
+                    <i class="ti ti-chalkboard"></i>
+                    Kelas
+                </x-navbtn>
             </div>
         </nav>
         <main class="min-h-[450px] mt-[90px] max-md:mt-[150px] flex flex-col gap-8 items-center">

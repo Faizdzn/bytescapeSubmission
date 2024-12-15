@@ -12,7 +12,7 @@ hr {
 }
 
 .centered {
-    @apply md:max-w-[71%] mx-auto w-full
+    @apply md:max-w-[61%] mx-auto w-full
 }
 
 .open-nav {
@@ -24,11 +24,35 @@ hr {
 }
 
 .open-side {
-    @apply opacity-100 transition-all max-md:h-full max-md:max-h-[5000px] md:max-w-[250px] max-md:overflow-clip max-md:mt-[30px]
+    @apply transition-all max-md:h-full max-md:max-h-[5000px] md:max-w-[250px] overflow-clip max-md:mt-[30px]
 }
 
 .close-side {
-    @apply opacity-0 transition-all max-md:max-h-0 md:max-w-0 max-md:overflow-clip max-md:mt-[30px]
+    @apply transition-all max-md:max-h-0 md:max-w-0 overflow-clip max-md:mt-[30px]
+}
+
+.open-dd {
+    @apply transition-all border-2 border-black_1/5 shadow-md shadow-black_1/15 overflow-clip max-h-[1000px]
+}
+
+.close-dd {
+    @apply transition-all overflow-clip max-h-0
+}
+
+.caret-act {
+    @apply transition ease-in -rotate-180
+}
+
+.caret {
+    @apply transition ease-in rotate-0
+}
+
+.item-dd {
+    @apply flex gap-4 items-center px-4 py-3 hover:bg-dark_green/10 hover:text-green
+}
+
+.checked-item-dd {
+    @apply flex gap-4 items-center px-4 py-3 bg-dark_green/10 text-green
 }
 
 .inp {
@@ -45,4 +69,18 @@ hr {
 
 .a {
     @apply transition ease-in text-green hover:underline
+}
+
+.a_1 {
+    @apply transition ease-in text-black/25 hover:text-green
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;
+}
+
+.scroll-hide {
+    @apply scrollbar-hide;
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
 }

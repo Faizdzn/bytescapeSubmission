@@ -2,18 +2,40 @@
 
 namespace App\Http\Controllers;
 
+use App\Exceptions\MainException;
 use App\Http\Requests\StoreKelasRequest;
 use App\Http\Requests\UpdateKelasRequest;
 use App\Models\Kelas;
+use Illuminate\Http\Request;
 
 class KelasController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $p = $request->query('page') ?? 1;
+        $s = $request->query('sort') ?? 'pop';
+        $sort_arr = [
+            'Terbaru' => 'new',
+            'Populer' => 'pop',
+            'Sudah Gabung' => 'join'
+        ];
+
+        if(!in_array($s, $sort_arr)) {
+            $s = 'pop';
+        }
+
+        if(!intval($p) || intval($p) < 1) {
+            $p = 1;
+        }
+
+        return view('page.kelas.index', [
+            'page' => $p,
+            'sort' => $s,
+            'sort_arr' => $sort_arr
+        ]);
     }
 
     /**
@@ -35,9 +57,35 @@ class KelasController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Kelas $kelas)
+    public function show($id, Request $request, Kelas $kelas)
     {
-        //
+        $id = intval($id);
+        $p = $request->query('page') ?? 1;
+        $s = $request->query('sort') ?? 'pop';
+        $sort_arr = [
+            'Terbaru' => 'new',
+            'Populer' => 'pop',
+        ];
+
+        if(!in_array($s, $sort_arr)) {
+            $s = 'pop';
+        }
+
+        if(!intval($p) || intval($p) < 1) {
+            $p = 1;
+        }
+
+        if(!$id) {
+            return response()->redirectTo('/kelas');
+        }
+
+        return view('page.kelas.single', [
+            'id' => $id,
+            'kelas_name' => 'Test Kelas',
+            'sort_arr' => $sort_arr,
+            'sort' => $s,
+            'page' => $p
+        ]);
     }
 
     /**
