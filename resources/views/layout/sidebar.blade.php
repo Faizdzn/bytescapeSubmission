@@ -45,7 +45,7 @@
         <main class="min-h-[450px] mt-[90px] max-md:mt-[150px] flex flex-col gap-8 items-center">
             @yield('content')
         </main>
-        <div class="centered">
+        <div class="centered mt-[125px]">
             <x-footer></x-footer>
         </div>
     </app>

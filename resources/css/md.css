@@ -1,6 +1,6 @@
 /* Basic Typography */
 .md-parse {
-  @apply break-words text-justify text-black_1 leading-relaxed;
+  @apply break-words text-justify border-4 border-black_1/5 border-dashed rounded-xl p-4 text-black_1 leading-relaxed;
 }
 
 .md-parse h1, 

@@ -8,9 +8,9 @@
         <i class="ti ti-arrow-left"></i>
         Kembali ke halaman pencarian
     </a>
-    <div class="flex flex-col gap-4">
+    <div class="flex flex-col gap-7">
         <div class="max-md:mx-auto w-full h-[250px] rounded-xl bg-black_1/25"></div>
-        <div class="flex gap-2 justify-between mb-[21px]">
+        <div class="flex gap-2 justify-between">
             <div class="flex flex-col">
                 <span class="text-3xl text-green font-bold">
                     {{'Course Name'}}
@@ -37,9 +37,9 @@
             </x-button>
         </div>
     </div>
-    <hr>
-    <div class="flex flex-col gap-2">
-        <span class="text-xl text-green font-bold">
+    <div class="mt-[31px] flex flex-col gap-2">
+        <span class="text-sm text-black_1/25 font-bold flex gap-2 items-center">
+            <i class="ti ti-info-circle"></i>
             Tentang Course
         </span>
         <div class="md-parse">
