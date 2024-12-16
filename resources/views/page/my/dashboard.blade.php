@@ -10,7 +10,7 @@
         </span>
         <div class="w-full flex flex-wrap gap-4 p-2">
             <div class="flex-1 min-w-[250px] flex flex-col gap-2 text-black_1/25 border-2 border-black_1/10 rounded-xl p-3">
-                <span class="text-sm">Course Yang Sudah Kamu Ikuti</span>
+                <span class="text-sm">Course Yang Kamu Kunjungi</span>
                 <span class="flex items-center gap-2 text-2xl text-green">
                     <i class="ti ti-school"></i>
                     150

@@ -6,6 +6,7 @@ use App\Http\Requests\StoreCourseRequest;
 use App\Http\Requests\UpdateCourseRequest;
 use App\Models\Course;
 use Illuminate\Http\Request;
+use Parsedown;
 
 class CourseController extends Controller
 {
@@ -56,9 +57,38 @@ class CourseController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(Request $request, Course $course)
+    public function show($id, Request $request, Course $course)
     {
+        $md = new Parsedown();
+
+        $id = intval($id);
+        $p = $request->query('page') ?? 1;
+        $s = $request->query('sort') ?? 'pop';
+        $sort_arr = [
+            'Terbaru' => 'new',
+            'Populer' => 'pop',
+        ];
+
+        if(!in_array($s, $sort_arr)) {
+            $s = 'pop';
+        }
+
+        if(!intval($p) || intval($p) < 1) {
+            $p = 1;
+        }
+
+        if(!$id) {
+            return response()->redirectTo('/kelas');
+        }
         
+        return view('page.course.single', [
+            'id' => $id,
+            'course_name' => 'Test Course',
+            'course_about' => $md->parse("# Test\nThis is a test"),
+            'sort_arr' => $sort_arr,
+            'sort' => $s,
+            'page' => $p
+        ]);
     }
 
     /**

@@ -4,8 +4,8 @@
         <div class="flex flex-col">
             <span class="text-xl">Course Name</span>
             <div class="flex items-center text-sm gap-1 text-black_1/25">
-                <i class="ti ti-user-circle"></i>
-                Author Name
+                <i class="ti ti-chalkboard"></i>
+                Class Name
             </div>
         </div>
         <div class="flex gap-2 items-center">

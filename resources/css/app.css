@@ -84,3 +84,8 @@ hr {
     -ms-overflow-style: none;  /* IE and Edge */
     scrollbar-width: none;  /* Firefox */
 }
+
+.swal2-container {
+    @apply z-[100000000]
+}
+

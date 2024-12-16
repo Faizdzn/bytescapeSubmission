@@ -18,7 +18,7 @@
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/dist/tabler-icons.min.css" />
     @if (file_exists(public_path('build/manifest.json')) || file_exists(public_path('hot')))
-        @vite(['resources/css/app.css'])
+        @vite(['resources/css/app.css', 'resources/css/md.css'])
         <script src="https://cdn.tailwindcss.com"></script> 
     @else
         <script src="https://cdn.tailwindcss.com"></script> 

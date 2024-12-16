@@ -191,6 +191,27 @@ const activeDD = (id, value, url = "") => {
     }
 }
 
+const addStar = (id, val, fn) => {
+    const rv = document.getElementById(`${id}-val`);
+    const lab = document.getElementById(`${id}-label`);
+    
+    for(let i = 1; i <= rv.getAttribute('value'); i++) {
+        const sv = document.getElementById(`${id}-star-${i}`);
+        sv.classList.contains('text-gold') ? sv.classList.remove('text-gold') : '';
+    }
+
+    rv.setAttribute('value', val);
+    lab.textContent = "Rating Anda";
+    for(let i = 1; i <= val; i++) {
+        const sv = document.getElementById(`${id}-star-${i}`);
+        sv.classList.add('text-gold');
+    }
+
+    if(fn) {
+        fn();
+    }
+}
+
 const btnHref = (url) => {
     window.location.href = url
 }
@@ -207,5 +228,47 @@ const shareUrl = async(url) => {
         await navigator.share(sdt);
     } catch(e) {
         console.error(e);
+    }
+}
+
+const toast = (icon, message) => {
+    const Toast = Swal.mixin({
+          toast: true,
+          position: 'top-end',
+          showConfirmButton: false,
+          timer: 1550,
+          timerProgressBar: true,
+          didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+          }
+        });
+    
+    if(icon == 'success') {
+      Toast.fire({
+                icon: 'success',
+                iconColor: 'white',
+                title: message,
+                color: "white",
+                background: "#07ab02",
+              });
+    } else if (icon == 'error') {
+      Toast.fire({
+                icon: 'error',
+                iconColor: 'white',
+                title: message,
+                color: "white",
+                background: "#ab0502",
+              });
+    } else {
+      Toast.fire({
+            timer: 10000,
+            timerProgressBar: true,
+            icon: "warning",
+            iconColor: "white",
+            title: message,
+            color: "white",
+            background: "#4287f5",
+          });
     }
 }

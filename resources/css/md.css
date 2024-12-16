@@ -1,0 +1,108 @@
+/* Basic Typography */
+.md-parse {
+  @apply break-words text-justify text-black_1 leading-relaxed;
+}
+
+.md-parse h1, 
+.md-parse h2, 
+.md-parse h3, 
+.md-parse h4, 
+.md-parse h5, 
+.md-parse h6 {
+  @apply text-green font-bold mt-4 mb-2;
+}
+
+.md-parse h1 {
+  @apply text-4xl border-b-2 pb-1;
+}
+
+.md-parse h2 {
+  @apply text-3xl border-b pb-1;
+}
+
+.md-parse h3 {
+  @apply text-2xl;
+}
+
+.md-parse h4 {
+  @apply text-xl;
+}
+
+.md-parse h5 {
+  @apply text-lg;
+}
+
+.md-parse h6 {
+  @apply text-base;
+}
+
+.md-parse p {
+  @apply my-4 before:content-['AAAA'] before:text-transparent;
+}
+
+/* Lists */
+.md-parse ul, 
+.md-parse ol {
+  @apply pl-10 my-4;
+}
+
+.md-parse li {
+  @apply my-2;
+}
+
+/* Blockquotes */
+.md-parse blockquote {
+  @apply my-4 py-2 px-4 text-gray-400 border-l-4 border-gray-600 ;
+}
+
+/* Code */
+.md-parse pre, 
+.md-parse code {
+  @apply font-mono;
+}
+
+.md-parse pre {
+  @apply bg-gray-800 p-4 rounded overflow-auto;
+}
+
+.md-parse code {
+  @apply bg-gray-800 px-2 py-1 rounded;
+}
+
+/* Links */
+.md-parse a {
+  @apply text-blue-500 no-underline;
+}
+
+.md-parse a:hover {
+  @apply underline;
+}
+
+/* Tables */
+.md-parse table {
+  @apply border-collapse my-4 w-full;
+}
+
+.md-parse th, 
+.md-parse td {
+  @apply border border-gray-600 p-2;
+}
+
+.md-parse th {
+  @apply bg-gray-700 text-left;
+}
+
+/* Horizontal Rule */
+.md-parse hr {
+  @apply border-t border-gray-600 my-8;
+}
+
+/* Images */
+.md-parse img {
+  @apply max-w-full w-[650px] h-auto my-3 mx-auto;
+}
+
+/* Iframes */
+.md-parse iframe {
+  @apply max-w-full border-none my-3 mx-auto;
+}
