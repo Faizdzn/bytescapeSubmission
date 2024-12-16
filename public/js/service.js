@@ -1,8 +1,23 @@
-const login = () => {
-    // const u = document.getElementById("username-val").value;
-    // const p = document.getElementById("password-val").value;
+const login = async () => {
+    const u = document.getElementById("username-val").value;
+    const p = document.getElementById("password-val").value;
+    
+    const url = '/api/login'
+    const dt = {
+        u,
+        p
+    }
 
-    toast('success', "Test")
+    try {
+        const {data} = await axios.post(url, dt);
+
+        toast('success', data.msg);
+        setTimeout(() => {
+            window.location.href = '/my/dashboard'
+        }, 2500)
+    } catch(e) {
+        toast('error', e.response.data.err['msg'])
+    }
 }
 
 const searchKelas = () => {

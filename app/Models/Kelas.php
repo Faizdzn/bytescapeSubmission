@@ -16,6 +16,7 @@ class Kelas extends Model
      * @var array<string>
      */
     protected $fillable = [
-        'kelas_name'
+        'kelas_name',
+        'kelas_thumb'
     ];
 }

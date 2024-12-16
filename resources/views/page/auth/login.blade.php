@@ -22,4 +22,6 @@
             </span>
         </div>
     </div>
+    {{$c}}
+    {{request()->cookie('edu-token')}}
 @endsection

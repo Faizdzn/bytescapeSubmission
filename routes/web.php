@@ -5,6 +5,7 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\test;
 use App\Http\Controllers\test2;
+use App\Utilities\Jwt;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
@@ -13,7 +14,13 @@ Route::get('/', function () {
 });
 
 Route::get('/login', function () {
-    return view('page.auth.login');
+    if(request()->cookie('edu-token')) {
+        return redirect('/my/dashboard');
+    }
+
+    return view('page.auth.login', [
+        'c' => dd(request()->cookie())
+    ]);
 });
 
 Route::get('/register', function () {

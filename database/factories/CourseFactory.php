@@ -17,7 +17,10 @@ class CourseFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'course_name' => 'Test Course',
+            'course_about' => '# test',
+            'course_thumb' => '',
+            'kelas_id' => 1
         ];
     }
 }

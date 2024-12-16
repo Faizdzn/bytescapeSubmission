@@ -17,7 +17,8 @@ class KelasFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'kelas_name' => 'Test Kelas',
+            'kelas_thumb' => ''
         ];
     }
 }

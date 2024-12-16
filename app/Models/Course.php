@@ -18,6 +18,7 @@ class Course extends Model
     protected $fillable = [
         'course_name',
         'course_about',
+        'course_thumb',
         'kelas_id'
     ];
 }
