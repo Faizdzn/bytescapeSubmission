@@ -8,20 +8,20 @@
     <div id="profDD" class="close-dd z-[3000] absolute top-[45px] flex flex-col rounded-md bg-white_1 w-[150px]">
         @if (request()->cookie('TestCookie') != null)
             <span class="text-black_1/50 p-2 text-center border-b-2 border-black_1/5">Username</span>
-            <a class="flex gap-4 items-center px-4 py-2 hover:bg-dark_green/10 hover:text-green">
+            <a href="/my/settings" class="flex gap-4 items-center px-4 py-2 hover:bg-dark_green/10 hover:text-green">
                 <i class="ti ti-settings"></i>
                 Pengaturan
             </a>
-            <a class="flex gap-4 items-center px-4 py-2 hover:bg-red-700/25 text-red-500">
+            <a href="/logout" class="flex gap-4 items-center px-4 py-2 hover:bg-red-700/25 text-red-500">
                 <i class="ti ti-logout"></i>
                 Keluar
             </a> 
         @else
-            <a class="flex gap-4 items-center px-4 py-2 hover:bg-dark_green/10 hover:text-green">
+            <a href="/login" class="flex gap-4 items-center px-4 py-2 hover:bg-dark_green/10 hover:text-green">
                 <i class="ti ti-login"></i>
                 Login
             </a>
-            <a class="flex gap-4 items-center px-4 py-2 hover:bg-dark_green/10 hover:text-green">
+            <a href="/register" class="flex gap-4 items-center px-4 py-2 hover:bg-dark_green/10 hover:text-green">
                 <i class="ti ti-pencil"></i>
                 Register
             </a>

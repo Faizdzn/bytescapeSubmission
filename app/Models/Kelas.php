@@ -9,4 +9,13 @@ class Kelas extends Model
 {
     /** @use HasFactory<\Database\Factories\KelasFactory> */
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<string>
+     */
+    protected $fillable = [
+        'kelas_name'
+    ];
 }

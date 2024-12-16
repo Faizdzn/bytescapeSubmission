@@ -25,3 +25,17 @@ const searchCourse = () => {
     const sv = document.getElementById("search_course-val").value;
     window.location.href = `/course?search=${sv}&sort=${dd}&page=${pg}`;
 }
+
+const changePass = () => {
+    const op = document.getElementById('oldPass-cp-val').value;
+    const np = document.getElementById('newPass-cp').value;
+
+    console.log(op);
+}
+
+const changeUsername = () => {
+    const u = document.getElementById('username-cu-val').value;
+    const p = document.getElementById('password-cu-val').value;
+
+    console.log(u);
+}

@@ -24,6 +24,10 @@ Route::prefix('/my')->group(function () {
     Route::get('/dashboard', function () {
         return view('page.my.dashboard');
     });
+
+    Route::get('/settings', function () {
+        return view('page.my.settings');
+    });
 });
 
 Route::prefix('/kelas')->group(function () {

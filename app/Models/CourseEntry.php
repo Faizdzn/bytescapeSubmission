@@ -9,4 +9,14 @@ class CourseEntry extends Model
 {
     /** @use HasFactory<\Database\Factories\CourseEntryFactory> */
     use HasFactory;
+
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array<string>
+     */
+    protected $fillable = [
+        'user_id',
+        'course_id'
+    ];
 }
