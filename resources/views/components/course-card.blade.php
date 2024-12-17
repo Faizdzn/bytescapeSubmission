@@ -2,7 +2,7 @@
     <div class="bg-black/25 rounded-md w-full h-[100px] bg-center bg-[url('{{$course['course_thumb']}}')] bg-cover"></div>
     <div class="flex gap-2 justify-between">
         <div class="flex flex-col">
-            <span class="text-xl">{{$course['course_name']}}</span>
+            <span class="text-xl text-green font-bold">{{$course['course_name']}}</span>
             <a href="/kelas/{{$kelas['kelas_id']}}" class="a_1 flex items-center text-sm gap-1">
                 <i class="ti ti-chalkboard"></i>
                 {{$kelas['kelas_name']}}
