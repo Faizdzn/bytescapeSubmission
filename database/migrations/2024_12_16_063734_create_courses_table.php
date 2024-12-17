@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id('course_id');
             $table->string('course_name');
             $table->string('course_about', 500);
+            $table->string('course_link');
             $table->string('course_thumb');
             $table->integer('kelas_id');
             $table->timestamps();

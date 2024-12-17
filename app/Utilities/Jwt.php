@@ -1,6 +1,7 @@
 <?php
 namespace App\Utilities;
 
+use App\Exceptions\MainException;
 use Firebase\JWT\JWT as jw;
 use Firebase\JWT\Key;
 use stdClass;
@@ -15,9 +16,9 @@ class Jwt {
         return $jwt;
     }
 
-    public static function decrypt(string $e): stdClass {
+    public static function decrypt(string $e): stdClass | bool {
         $jwtD = jw::decode($e, new Key(self::$key, self::$algo));
-
+        
         return $jwtD;
     }
 }

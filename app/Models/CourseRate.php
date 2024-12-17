@@ -20,4 +20,11 @@ class CourseRate extends Model
         'course_id',
         'star'
     ];
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 }

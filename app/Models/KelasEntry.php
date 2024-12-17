@@ -19,4 +19,11 @@ class KelasEntry extends Model
         'user_id',
         'kelas_id'
     ];
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 }

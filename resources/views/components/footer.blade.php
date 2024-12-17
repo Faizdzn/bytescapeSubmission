@@ -5,10 +5,10 @@
         <span>EduPoint</span>
     </div>
     <div class="text-black_1/50 text-sm mx-auto flex gap-4 items-center">
-        <a class="hover:text-green" href="{{url("/")}}">Home</a>
+        <a class="hover:text-green" href="{{url("/my/dashboard")}}">Home</a>
         <i class="text-black_1/25 text-[5px] ti ti-circle-filled"></i>
-        <a class="hover:text-green" href="{{url("/")}}">Course</a>
+        <a class="hover:text-green" href="{{url("/course")}}">Course</a>
         <i class="text-black_1/25 text-[5px] ti ti-circle-filled"></i>
-        <a class="hover:text-green" href="{{url("/")}}">Kelas</a>
+        <a class="hover:text-green" href="{{url("/kelas")}}">Kelas</a>
     </div>
 </footer>

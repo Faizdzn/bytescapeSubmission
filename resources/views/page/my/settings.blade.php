@@ -9,7 +9,7 @@
         <x-input name="Username" id="username-cu"></x-input>
         <x-input name="Password" id="password-cu"></x-input>
         <div class="mt-[16px]">
-            <x-button variant="highlight" fn="changeUsername()">
+            <x-button variant="highlight" fn="changeUsername('{{request()->cookie('edu-token')}}')">
                 <i class="ti ti-pencil"></i>
                 Change Username
             </x-button>
@@ -20,7 +20,7 @@
         <x-input name="Old Password" id="oldPass-cp"></x-input>
         <x-input name="New Password" id="newPass-cp"></x-input>
         <div class="mt-[16px]">
-            <x-button variant="highlight" fn="changePass()">
+            <x-button variant="highlight" fn="changePass('{{request()->cookie('edu-token')}}')">
                 <i class="ti ti-pencil"></i>
                 Change Password
             </x-button>

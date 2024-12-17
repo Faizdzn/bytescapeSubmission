@@ -14,7 +14,7 @@
             <x-input name="Confirm Password" id="con-password"></x-input>
         </div>
         <div class="flex flex-col gap-2">
-            <x-button variant="highlight" fn="login()">
+            <x-button variant="highlight" fn="register()">
                 <i class="ti ti-pencil"></i>
                 Register
             </x-button>

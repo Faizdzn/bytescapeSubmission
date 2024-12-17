@@ -191,10 +191,10 @@ const activeDD = (id, value, url = "") => {
     }
 }
 
-const addStar = (id, val, fn) => {
+const addStar = (id, val, fn = "") => {
     const rv = document.getElementById(`${id}-val`);
     const lab = document.getElementById(`${id}-label`);
-    
+
     for(let i = 1; i <= rv.getAttribute('value'); i++) {
         const sv = document.getElementById(`${id}-star-${i}`);
         sv.classList.contains('text-gold') ? sv.classList.remove('text-gold') : '';
@@ -207,9 +207,7 @@ const addStar = (id, val, fn) => {
         sv.classList.add('text-gold');
     }
 
-    if(fn) {
-        fn();
-    }
+    fn;
 }
 
 const btnHref = (url) => {

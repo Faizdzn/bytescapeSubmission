@@ -19,4 +19,11 @@ class CourseEntry extends Model
         'user_id',
         'course_id'
     ];
+
+    /**
+     * Indicates if the model should be timestamped.
+     *
+     * @var bool
+     */
+    public $timestamps = false;
 }

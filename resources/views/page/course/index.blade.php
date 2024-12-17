@@ -23,11 +23,10 @@
     </div>
     <hr>
     <div class="flex flex-wrap justify-center max-md:flex-col gap-4">
-        <x-course-card></x-course-card>
-        <x-course-card></x-course-card>
-        <x-course-card></x-course-card>
-        <x-course-card></x-course-card>
+        @foreach ($course as $item)
+            <x-course-card cid="{{$item['course_id']}}"></x-course-card>
+        @endforeach
     </div>
-    <x-pagination id="course-page" current="{{$page}}"></x-pagination>
+    <x-pagination id="course-page" max="{{$max_page}}" current="{{$page}}"></x-pagination>
 </div>
 @endsection

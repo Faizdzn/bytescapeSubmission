@@ -23,14 +23,10 @@
     </div>
     <hr>
     <div class="flex flex-wrap justify-center max-md:flex-col gap-4">
-        <x-kelas-card kid="2"></x-kelas-card>
-        <x-kelas-card></x-kelas-card>
-        <x-kelas-card></x-kelas-card>
-        <x-kelas-card></x-kelas-card>
-        <x-kelas-card></x-kelas-card>
-        <x-kelas-card></x-kelas-card>
-        <x-kelas-card></x-kelas-card>
+        @foreach ($kelas as $i)
+        <x-kelas-card kid="{{$i['kelas_id']}}"></x-kelas-card>
+        @endforeach
     </div>
-    <x-pagination id="kelas-page" current="{{$page}}"></x-pagination>
+    <x-pagination id="kelas-page" max="{{$max_page}}" current="{{$page}}"></x-pagination>
 </div>
 @endsection

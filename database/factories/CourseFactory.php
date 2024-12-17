@@ -20,6 +20,7 @@ class CourseFactory extends Factory
             'course_name' => 'Test Course',
             'course_about' => '# test',
             'course_thumb' => '',
+            'course_link' => '/',
             'kelas_id' => 1
         ];
     }

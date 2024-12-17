@@ -44,7 +44,7 @@ class AuthController extends Controller
 
         $jwtV = [
             'id' => $id,
-            'usernane' => $u
+            'username' => $u
         ];
         $jwtE = Jwt::sign($jwtV);
 
@@ -82,7 +82,7 @@ class AuthController extends Controller
 
         $jwtV = [
             'id' => $udt['id'],
-            'usernane' => $udt['name']
+            'username' => $udt['name']
         ];
         $jwtE = Jwt::sign($jwtV);
 
@@ -91,16 +91,16 @@ class AuthController extends Controller
             'data' => [
                 'token' => $jwtE
             ]
-        ])->withCookie(cookie('edu-token', $jwtE));
+        ]);
     }
 
     public function changePass(Request $request) {
         $op = htmlentities($request['op']);
         $np = htmlentities($request['np']);
         
-        $cookie = $request->cookie('edu-token');
-        if(!$cookie) {
-            throw new MainException("Unauthorized", 401);
+        $cookie = $request['cookie'];
+        if(strlen($cookie) < 1) {
+            throw new MainException("No cookies inserted!", 401);
         }
         $jwt = Jwt::decrypt($cookie);
 
@@ -131,9 +131,9 @@ class AuthController extends Controller
         $u = htmlentities($request['u']);
         $p = htmlentities($request['p']);
         
-        $cookie = $request->cookie('edu-token');
-        if(!$cookie) {
-            throw new MainException("Unauthorized", 401);
+        $cookie = $request['cookie'];
+        if(strlen($cookie) < 1) {
+            throw new MainException("No cookies inserted!", 401);
         }
         $jwt = Jwt::decrypt($cookie);
 
@@ -143,6 +143,11 @@ class AuthController extends Controller
 
         if(!Extra::userIdExist($jwt->id)) {
             throw new MainException("Data tidak ditemukan!", 404);
+        }
+
+        $exi = Extra::userExist($u);
+        if($exi) {
+            throw new MainException("Username telah digunakan!", 400);
         }
 
         $usr = User::select()->where('id', $jwt->id);
