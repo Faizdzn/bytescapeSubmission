@@ -5,11 +5,8 @@ use App\Http\Controllers\CourseController;
 use App\Http\Controllers\KelasController;
 use App\Http\Controllers\test;
 use App\Http\Controllers\test2;
-use App\Http\Middleware\Login;
-use App\Http\Middleware\NotLogin;
 use App\Utilities\Jwt;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
