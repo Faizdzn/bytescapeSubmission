@@ -31,7 +31,7 @@ Route::get('/login', function () {
         return redirect('/my/dashboard');
     }
 
-    return view('page.auth.login');
+    return redirect('/login');
 });
 
 Route::get('/register', function () {
