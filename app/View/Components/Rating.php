@@ -14,6 +14,8 @@ class Rating extends Component
     public function __construct(
         public string $id,
         public string $fn = '',
+        public string $disable = '0',
+        public string $disableText = '',
         public string $value = '0',
     )
     {

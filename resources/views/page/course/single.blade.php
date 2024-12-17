@@ -1,6 +1,7 @@
 @php
 use App\Utilities\Jwt;
 use App\Models\KelasEntry;
+use App\Models\CourseEntry;
 use App\Models\CourseRate;
 
 $c = request()->cookie('edu-token');
@@ -8,6 +9,7 @@ if($c != null) {
     $u = Jwt::decrypt($c);
     $mystar = CourseRate::select()->where('user_id', $u->id)->where('course_id', $id)->first();
     $joinKelas = KelasEntry::select()->where('user_id', $u->id)->where('kelas_id', $course['kelas_id'])->count();
+    $checkE = CourseEntry::all()->where('user_id', $u->id)->where('course_id', $id)->count();
 }
 @endphp
 
@@ -41,7 +43,7 @@ if($c != null) {
             </div>
         </div>
         @if ($c != null)
-        <x-rating id="rate-course" value="{{$mystar->star ?? 0}}" fn="rateCourse({{$id}}, '{{$c}}')"></x-rating>
+        <x-rating id="rate-course" disableText="{{!$joinKelas ? 'Anda Belum Gabung Ke Kelas' : (!$checkE ? 'Anda Belum Tonton Course Ini' : '')}}" disable="{{!$joinKelas || !$checkE}}" value="{{$mystar->star ?? 0}}" fn="rateCourse({{$id}}, '{{$c}}')"></x-rating>
         @endif
         <div class="flex max-md:flex-col gap-2">
             @if ($joinKelas ?? 0)
