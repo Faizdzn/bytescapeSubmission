@@ -7,6 +7,7 @@ use App\Http\Controllers\test;
 use App\Http\Controllers\test2;
 use App\Utilities\Jwt;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Cookie;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -15,6 +16,14 @@ Route::get('/', function () {
     }
 
     return view('page.main');
+});
+
+Route::get('/logout', function () {
+    if(request()->cookie('edu-token')) {
+        return response()->redirectTo('/login')->withCookie(Cookie::forget('edu-token'));
+    }
+
+    return view('page.auth.login');
 });
 
 Route::get('/login', function () {
@@ -45,7 +54,7 @@ Route::prefix('/my')->group(function () {
                 throw new MainException("Bad Request", 400);
             }
 
-            return response()->redirectTo('/my/dashboard')->withCookie(cookie('edu-token', $access));
+            return response()->redirectTo('/my/dashboard')->withCookie(Cookie::make('edu-token', $access));
         }
         return view('page.my.dashboard');
     });
