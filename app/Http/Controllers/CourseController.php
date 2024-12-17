@@ -163,7 +163,7 @@ class CourseController extends Controller
             $courseE->save();
         }
 
-        return redirect('https://'.$courseDt->course_link);
+        return redirect($courseDt->course_link);
     }
 
     public function rate($course_id, Request $req) {
