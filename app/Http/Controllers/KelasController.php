@@ -38,7 +38,7 @@ class KelasController extends Controller
         $kelas = Kelas::select()->where('kelas_name', 'like', '%'.$se.'%')->orderBy('kelas_id', ($s == 'new' ? 'desc' : 'asc'))->offset(($p - 1) * 10)->limit(10)->get();
         
         $kelasCount = Kelas::select()->where('kelas_name', 'like', '%'.$se.'%')->orderBy('kelas_id', ($s == 'new' ? 'desc' : 'asc'))->count();
-        $mp = ceil($kelasCount / 10);
+        $mp = ceil($kelasCount / 10) + 1;
 
         return view('page.kelas.index', [
             'page' => $p,
@@ -101,7 +101,7 @@ class KelasController extends Controller
         $course = Course::select()->where('kelas_id', $id)->where('course_name', 'like', '%'.$se.'%')->orderBy('course_id', ($s == 'new' ? 'desc' : 'asc'))->offset(($p - 1) * 10)->limit(10)->get();
         
         $courseCount = Course::select()->where('kelas_id', $id)->where('course_name', 'like', '%'.$se.'%')->orderBy('course_id', ($s == 'new' ? 'desc' : 'asc'))->count();
-        $mp = ceil($courseCount / 10);
+        $mp = ceil($courseCount / 10) + 1;
 
         return view('page.kelas.single', [
             'id' => $id,

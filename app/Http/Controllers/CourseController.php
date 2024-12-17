@@ -40,7 +40,7 @@ class CourseController extends Controller
         $course = Course::select()->where('course_name', 'like', '%'.$se.'%')->orderBy('course_id', ($s == 'new' ? 'desc' : 'asc'))->offset(($p - 1) * 10)->limit(10)->get();
         
         $courseCount = Course::select()->where('course_name', 'like', '%'.$se.'%')->count();
-        $mp = ceil($courseCount / 10);
+        $mp = ceil($courseCount / 10) + 1;
 
         return view('page.course.index', [
             'course' => $course,
