@@ -23,7 +23,7 @@ Route::get('/logout', function () {
         return response()->redirectTo('/login')->withCookie(Cookie::forget('edu-token'));
     }
 
-    return view('page.auth.login');
+    return redirect('/login');
 });
 
 Route::get('/login', function () {
@@ -31,7 +31,7 @@ Route::get('/login', function () {
         return redirect('/my/dashboard');
     }
 
-    return redirect('/login');
+    return view('page.auth.login');
 });
 
 Route::get('/register', function () {
