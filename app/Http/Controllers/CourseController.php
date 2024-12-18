@@ -30,7 +30,7 @@ class CourseController extends Controller
         ];
 
         if(!in_array($s, $sort_arr)) {
-            $s = 'old';
+            $s = 'new';
         }
 
         if(!intval($p) || intval($p) < 1) {
