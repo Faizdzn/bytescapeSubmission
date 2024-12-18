@@ -29,7 +29,7 @@ if($c != null) {
                     {{$pelajar}} Pelajar
                 </span>
             </div>
-            <div class="flex max-md:flex-col justify-center gap-2">
+            <div class="flex max-md:flex-col gap-2">
                 <div>
                     @if ($joinKelas ?? 0)
                     <x-button variant="highlight" fn="leaveClass({{$id}}, '{{$c}}')">
