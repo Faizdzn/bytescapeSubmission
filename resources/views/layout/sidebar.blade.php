@@ -11,7 +11,9 @@
                         <div onclick="openSb()" class="flex justify-center items-center hover:bg-dark_green/15 hover:text-green p-2 rounded-md">
                             <i class="ti ti-menu"></i>
                         </div>
-                        <img src="/assets/logo.svg" width="21">
+                        <a href="/">
+                            <img src="/assets/logo.svg" width="21">
+                        </a>
                     </div>
                     <div class="max-md:hidden flex-1 max-w-[50%] flex justify-center items-center">
                         <x-search-box cid="1"></x-search-box>
