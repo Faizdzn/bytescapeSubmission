@@ -89,7 +89,7 @@ class CourseController extends Controller
             $starArr += $i['star'];
         }
 
-        $starAvg = $starTotal > 0 ? ($starArr / $starTotal) : 0;
+        $starAvg = $starTotal > 0 ? round($starArr / $starTotal, 1) : 0;
 
         $class = Kelas::select()->where('kelas_id', $courseDt->kelas_id)->first();
 
