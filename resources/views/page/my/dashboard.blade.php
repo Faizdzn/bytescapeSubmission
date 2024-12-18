@@ -24,7 +24,7 @@ $kelas_c = KelasEntry::select()->where('user_id', $u->id)->count();
 <div class="centered flex flex-col gap-6">
     <div class="w-full flex flex-col gap-4 items-center">
         <span class="text-green font-bold text-3xl">
-            Welcome, {{$u->username}}!
+            Welcome, {{$udt->name}}!
         </span>
         <div class="w-full flex flex-wrap gap-4 p-2">
             <div class="flex-1 min-w-[250px] flex flex-col gap-2 text-black_1/25 border-2 border-black_1/10 rounded-xl p-3">
